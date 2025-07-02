@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <input type="text" id="phone" placeholder="Enter phone number">
+        <p id="message"></p>
+        <script>
+            let phone = document.getElementById("phone");
+            phone.addEventListener("input", function() {
+                let str = phone.value.trim();
+                let phoneRegex = /^(?:\+91|0)?[6-9][0-9]{9}$/;
+                if(phoneRegex.test(str)){
+                    document.getElementById("message").innerHTML = "Valid phone number";
+                    document.getElementById("message").style.color = "green";
+                } else {
+                    document.getElementById("message").innerHTML = "Invalid phone number";
+                    document.getElementById("message").style.color = "red";
+                }
+            });
+        </script>
+    </body>
+</html>
